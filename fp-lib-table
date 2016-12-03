@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name SMA_EDGE)(type Legacy)(uri "$(KIPRJMOD)\\SMA_EDGE.mod")(options "")(descr ""))
+  (lib (name elepaja)(type KiCad)(uri "$(KIPRJMOD)\\elepaja.pretty")(options "")(descr ""))
+)
