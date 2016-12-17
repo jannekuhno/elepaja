@@ -25,11 +25,15 @@ void main(void)
 #error "Init not conf'd for PSOC yet"
 #endif
 
-  uint8_t tx[4] = {0x20, 0x4E, 0x24, 0x00};
+  uint32_t tx = REG0_CONF;
 
   while(1)
   {
-    transfer_packet(tx, NULL, 0); // send the first conf to SPI
+    transfer_packet(tx, 0); // send the first conf to SPI
+    tx = REG1_CONF;
+    transfer_packet(tx, 0); // send the first conf to SPI
+    tx = REG2_CONF;
+    transfer_packet(tx, 0); // send the first conf to SPI
 #if PLATFORM_MSP430
     __bis_SR_register(LPM0_bits); // Go to eternal sleep - also MSP-specific
 #elif PLATFORM_PSOC

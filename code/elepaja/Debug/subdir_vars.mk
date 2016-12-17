@@ -10,21 +10,21 @@ C_SRCS += \
 ../com.c \
 ../main.c 
 
-OBJS += \
-./com.obj \
-./main.obj 
-
 C_DEPS += \
 ./com.d \
 ./main.d 
 
-C_DEPS__QUOTED += \
-"com.d" \
-"main.d" 
+OBJS += \
+./com.obj \
+./main.obj 
 
 OBJS__QUOTED += \
 "com.obj" \
 "main.obj" 
+
+C_DEPS__QUOTED += \
+"com.d" \
+"main.d" 
 
 C_SRCS__QUOTED += \
 "../com.c" \

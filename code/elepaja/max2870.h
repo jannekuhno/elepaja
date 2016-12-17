@@ -2,7 +2,7 @@
  * max2870.h
  *
  *  Created on: 17 Dec 2016
- *      Author: Reaktor Space Lab
+ *      Author: Janne Kuhno
  */
 
 #ifndef MAX2870_H_
@@ -69,14 +69,14 @@
 
 // Reg 4 conf
 #define FB 0x01000000 // VCO to N counter fundamental feedback mode
-#define DIVA_1 0x00000000 // Divide by 1
-#define DIVA_2 0x00200000 // Divide by 2
-#define DIVA_4 0x00400000 // Divide by 4
-#define DIVA_8 0x00600000 // Divide by 8
-#define DIVA_16 0x00800000 // Divide by 16
-#define DIVA_32 0x00A00000 // Divide by 32
-#define DIVA_64 0x00C00000 // Divide by 64
-#define DIVA_128 0x00E00000 // Divide by 128
+#define MAX_DIVA_1 0x00000000 // Divide by 1
+#define MAX_DIVA_2 0x00200000 // Divide by 2
+#define MAX_DIVA_4 0x00400000 // Divide by 4
+#define MAX_DIVA_8 0x00600000 // Divide by 8
+#define MAX_DIVA_16 0x00800000 // Divide by 16
+#define MAX_DIVA_32 0x00A00000 // Divide by 32
+#define MAX_DIVA_64 0x00C00000 // Divide by 64
+#define MAX_DIVA_128 0x00E00000 // Divide by 128
 
 #define BS_MSBs_SHIFT 24 // Band select 2 MSBs
 #define BS_SHIFT 12 // 10-bit band select location, check 2 MSBs

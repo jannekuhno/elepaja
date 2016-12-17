@@ -2,7 +2,7 @@
  * source.h
  *
  *  Created on: 10 Dec 2016
- *      Author: Reaktor Space Lab
+ *      Author: Janne Kuhno
  */
 
 #ifndef COM_H_
@@ -31,6 +31,6 @@
 #define SPI_SETUP_BAUDRATE() UCA0BR0 |= SPI_CLOCKRATE
 
 void setup_spi();
-void transfer_packet(uint8_t *, uint8_t *, uint8_t);
+uint32_t transfer_packet(uint32_t, uint8_t);
 
 #endif /* COM_H_ */

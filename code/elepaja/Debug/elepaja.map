@@ -1,10 +1,10 @@
 ******************************************************************************
-                  MSP430 Linker PC v15.12.3                    
+                  MSP430 Linker Unix v16.9.0                   
 ******************************************************************************
->> Linked Sat Dec 17 16:17:22 2016
+>> Linked Sat Dec 17 21:20:18 2016
 
 OUTPUT FILE NAME:   <elepaja.out>
-ENTRY POINT SYMBOL: "_c_int00_noargs_noexit"  address: 0000c1a0
+ENTRY POINT SYMBOL: "_c_int00_noargs_noexit"  address: 0000c1ba
 
 
 MEMORY CONFIGURATION
@@ -14,12 +14,12 @@ MEMORY CONFIGURATION
   SFR                   00000000   00000010  00000000  00000010  RWIX
   PERIPHERALS_8BIT      00000010   000000f0  00000000  000000f0  RWIX
   PERIPHERALS_16BIT     00000100   00000100  00000000  00000100  RWIX
-  RAM                   00000200   00000200  00000053  000001ad  RWIX
+  RAM                   00000200   00000200  00000056  000001aa  RWIX
   INFOD                 00001000   00000040  00000000  00000040  RWIX
   INFOC                 00001040   00000040  00000000  00000040  RWIX
   INFOB                 00001080   00000040  00000000  00000040  RWIX
   INFOA                 000010c0   00000040  00000000  00000040  RWIX
-  FLASH                 0000c000   00003fde  0000025a  00003d84  RWIX
+  FLASH                 0000c000   00003fde  0000028e  00003d50  RWIX
   BSLSIGNATURE          0000ffde   00000002  00000002  00000000  RWIX  ffff 
   INT00                 0000ffe0   00000002  00000002  00000000  RWIX
   INT01                 0000ffe2   00000002  00000000  00000002  RWIX
@@ -44,47 +44,46 @@ SECTION ALLOCATION MAP
  output                                  attributes/
 section   page    origin      length       input sections
 --------  ----  ----------  ----------   ----------------
-.bss       0    00000200    00000003     UNINITIALIZED
-                  00000200    00000002     (.common:tx_buf)
-                  00000202    00000001     (.common:phase)
+.bss       0    00000200    00000006     UNINITIALIZED
+                  00000200    00000004     (.common:tx_buf)
+                  00000204    00000002     (.common:phase)
 
 .stack     0    000003b0    00000050     UNINITIALIZED
                   000003b0    00000002     rts430_eabi.lib : boot.obj (.stack)
                   000003b2    0000004e     --HOLE--
 
-.text      0    0000c000    0000024c     
+.text      0    0000c000    00000284     
                   0000c000    0000006e     rts430_eabi.lib : autoinit.obj (.text:_auto_init)
                   0000c06e    0000005a                     : cpy_tbl.obj (.text:copy_in)
-                  0000c0c8    0000003c     com.obj (.text:tx_vector)
-                  0000c104    0000002c     main.obj (.text:main)
-                  0000c130    0000002a     com.obj (.text:transmit_packet)
-                  0000c15a    00000026     com.obj (.text:init_pins)
-                  0000c180    00000020     com.obj (.text:setup_spi)
-                  0000c1a0    0000001a     rts430_eabi.lib : boot_special.obj (.text:_c_int00_noargs_noexit)
-                  0000c1ba    00000014                     : copy_zero_init.obj (.text:decompress:ZI:__TI_zero_init)
-                  0000c1ce    00000014                     : mult16.obj (.text)
-                  0000c1e2    00000012                     : memcpy.obj (.text:memcpy)
-                  0000c1f4    00000010                     : epilog.obj (.text)
-                  0000c204    0000000e     main.obj (.text:init_msp_clocks)
-                  0000c212    0000000e     com.obj (.text:transfer_packet)
-                  0000c220    00000008     rts430_eabi.lib : isr_trap.obj (.text:_isr:__TI_ISR_TRAP)
-                  0000c228    00000008     com.obj (.text:spi_begin)
-                  0000c230    00000008     com.obj (.text:spi_end)
-                  0000c238    00000006     rts430_eabi.lib : exit.obj (.text:abort)
-                  0000c23e    00000006     com.obj (.text:transmit_byte)
-                  0000c244    00000004     rts430_eabi.lib : pre_init.obj (.text:_system_pre_init)
-                  0000c248    00000002                     : startup.obj (.text:_system_post_cinit)
-                  0000c24a    00000002     com.obj (.text:rx_vector)
+                  0000c0c8    00000046     com.obj (.text:tx_vector)
+                  0000c10e    0000003a     main.obj (.text:main)
+                  0000c148    0000002c     com.obj (.text:transmit_packet)
+                  0000c174    00000026     com.obj (.text:init_pins)
+                  0000c19a    00000020     com.obj (.text:setup_spi)
+                  0000c1ba    0000001a     rts430_eabi.lib : boot_special.obj (.text:_c_int00_noargs_noexit)
+                  0000c1d4    00000014                     : copy_zero_init.obj (.text:decompress:ZI:__TI_zero_init)
+                  0000c1e8    00000014                     : mult16.obj (.text)
+                  0000c1fc    00000012                     : lsr32.obj (.text:l_lsr)
+                  0000c20e    00000012                     : memcpy.obj (.text:memcpy)
+                  0000c220    00000012     com.obj (.text:transfer_packet)
+                  0000c232    00000010     rts430_eabi.lib : epilog.obj (.text)
+                  0000c242    0000000e     main.obj (.text:init_msp_clocks)
+                  0000c250    00000008     rts430_eabi.lib : isr_trap.obj (.text:_isr:__TI_ISR_TRAP)
+                  0000c258    00000008     com.obj (.text:spi_begin)
+                  0000c260    00000008     com.obj (.text:spi_end)
+                  0000c268    00000008     com.obj (.text:timera0_vector)
+                  0000c270    00000006     rts430_eabi.lib : exit.obj (.text:abort)
+                  0000c276    00000006     com.obj (.text:transmit_byte)
+                  0000c27c    00000004     rts430_eabi.lib : pre_init.obj (.text:_system_pre_init)
+                  0000c280    00000002                     : startup.obj (.text:_system_post_cinit)
+                  0000c282    00000002     com.obj (.text:rx_vector)
+
+.cinit     0    0000c284    0000000a     
+                  0000c284    00000004     (.cinit..bss.load) [load image, compression = zero_init]
+                  0000c288    00000002     (__TI_handler_table)
+                  0000c28a    00000004     (__TI_cinit_table)
 
 .binit     0    0000c000    00000000     
-
-.const     0    0000c24c    00000004     
-                  0000c24c    00000004     main.obj (.const:.string:$P$T0$1)
-
-.cinit     0    0000c250    0000000a     
-                  0000c250    00000004     (.cinit..bss.load) [load image, compression = zero_init]
-                  0000c254    00000002     (__TI_handler_table)
-                  0000c256    00000004     (__TI_cinit_table)
 
 .init_array 
 *          0    0000c000    00000000     UNINITIALIZED
@@ -97,9 +96,6 @@ PORT1      0    0000ffe4    00000002
 
 PORT2      0    0000ffe6    00000002     
                   0000ffe6    00000002     rts430_eabi.lib : int03.obj (.int03)
-
-$fill000   0    0000ffde    00000002     
-                  0000ffde    00000002     --HOLE-- [fill = ffff]
 
 ADC10      0    0000ffea    00000002     
                   0000ffea    00000002     rts430_eabi.lib : int05.obj (.int05)
@@ -133,7 +129,7 @@ TIMER1_A1
 
 TIMER1_A0 
 *          0    0000fffa    00000002     
-                  0000fffa    00000002     rts430_eabi.lib : int13.obj (.int13)
+                  0000fffa    00000002     com.obj (.int13)
 
 NMI        0    0000fffc    00000002     
                   0000fffc    00000002     rts430_eabi.lib : int14.obj (.int14)
@@ -141,22 +137,26 @@ NMI        0    0000fffc    00000002
 .reset     0    0000fffe    00000002     
                   0000fffe    00000002     rts430_eabi.lib : boot.obj (.reset)
 
+$fill000   0    0000ffde    00000002     
+                  0000ffde    00000002     --HOLE-- [fill = ffff]
+
 MODULE SUMMARY
 
        Module               code   ro data   rw data
        ------               ----   -------   -------
-    .\
-       com.obj              210    4         3      
-       main.obj             58     4         0      
+    ./
+       com.obj              234    6         6      
+       main.obj             72     0         0      
     +--+--------------------+------+---------+---------+
-       Total:               268    8         3      
+       Total:               306    6         6      
                                                     
-    C:\ti\ccsv6\tools\compiler\msp430_15.12.3.LTS\lib\rts430_eabi.lib
+    /opt/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.0.LTS/lib/rts430_eabi.lib
        autoinit.obj         110    0         0      
        cpy_tbl.obj          90     0         0      
        boot_special.obj     26     0         0      
        copy_zero_init.obj   20     0         0      
        mult16.obj           20     0         0      
+       lsr32.obj            18     0         0      
        memcpy.obj           18     0         0      
        epilog.obj           16     0         0      
        isr_trap.obj         8      0         0      
@@ -172,27 +172,26 @@ MODULE SUMMARY
        int10.obj            0      2         0      
        int11.obj            0      2         0      
        int12.obj            0      2         0      
-       int13.obj            0      2         0      
        int14.obj            0      2         0      
        startup.obj          2      0         0      
     +--+--------------------+------+---------+---------+
-       Total:               320    24        0      
+       Total:               338    22        0      
                                                     
        Stack:               0      0         80     
        Linker Generated:    0      10        0      
     +--+--------------------+------+---------+---------+
-       Grand Total:         588    42        83     
+       Grand Total:         644    38        86     
 
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 0000c256 records: 1, size/record: 4, table size: 4
-	.bss: load addr=0000c250, load size=00000004 bytes, run addr=00000200, run size=00000003 bytes, compression=zero_init
+__TI_cinit_table @ 0000c28a records: 1, size/record: 4, table size: 4
+	.bss: load addr=0000c284, load size=00000004 bytes, run addr=00000200, run size=00000006 bytes, compression=zero_init
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 0000c254 records: 1, size/record: 2, table size: 2
+__TI_handler_table @ 0000c288 records: 1, size/record: 2, table size: 2
 	index: 0, handler: __TI_zero_init
 
 
@@ -210,7 +209,7 @@ address   name
 00000057  BCSCTL1                 
 00000058  BCSCTL2                 
 00000053  BCSCTL3                 
-0000c238  C$$EXIT                 
+0000c270  C$$EXIT                 
 00000059  CACTL1                  
 0000005a  CACTL2                  
 000010fb  CALBC1_12MHZ            
@@ -303,13 +302,13 @@ address   name
 00000050  __STACK_SIZE            
 UNDEFED   __TI_BINIT_Base         
 UNDEFED   __TI_BINIT_Limit        
-0000c256  __TI_CINIT_Base         
-0000c25a  __TI_CINIT_Limit        
-0000c254  __TI_Handler_Table_Base 
-0000c256  __TI_Handler_Table_Limit
+0000c28a  __TI_CINIT_Base         
+0000c28e  __TI_CINIT_Limit        
+0000c288  __TI_Handler_Table_Base 
+0000c28a  __TI_Handler_Table_Limit
 UNDEFED   __TI_INITARRAY_Base     
 UNDEFED   __TI_INITARRAY_Limit    
-0000c220  __TI_ISR_TRAP           
+0000c250  __TI_ISR_TRAP           
 0000ffe0  __TI_int00              
 0000ffe4  __TI_int02              
 0000ffe6  __TI_int03              
@@ -326,37 +325,39 @@ UNDEFED   __TI_INITARRAY_Limit
 ffffffff  __TI_pprof_out_hndl     
 ffffffff  __TI_prof_data_size     
 ffffffff  __TI_prof_data_start    
-0000c1ba  __TI_zero_init          
+0000c1d4  __TI_zero_init          
 ffffffff  __c_args__              
-0000c200  __mspabi_func_epilog_1  
-0000c1fe  __mspabi_func_epilog_2  
-0000c1fc  __mspabi_func_epilog_3  
-0000c1fa  __mspabi_func_epilog_4  
-0000c1f8  __mspabi_func_epilog_5  
-0000c1f6  __mspabi_func_epilog_6  
-0000c1f4  __mspabi_func_epilog_7  
-0000c1ce  __mspabi_mpyi           
-0000c1ce  __mspabi_mpyi_sw        
+0000c23e  __mspabi_func_epilog_1  
+0000c23c  __mspabi_func_epilog_2  
+0000c23a  __mspabi_func_epilog_3  
+0000c238  __mspabi_func_epilog_4  
+0000c236  __mspabi_func_epilog_5  
+0000c234  __mspabi_func_epilog_6  
+0000c232  __mspabi_func_epilog_7  
+0000c1e8  __mspabi_mpyi           
+0000c1e8  __mspabi_mpyi_sw        
+0000c1fc  __mspabi_srll           
 0000c000  _auto_init              
-0000c1a0  _c_int00_noargs_noexit  
+0000c1ba  _c_int00_noargs_noexit  
 0000fffe  _reset_vector           
 000003b0  _stack                  
-0000c248  _system_post_cinit      
-0000c244  _system_pre_init        
-0000c238  abort                   
+0000c280  _system_post_cinit      
+0000c27c  _system_pre_init        
+0000c270  abort                   
 0000c06e  copy_in                 
-0000c204  init_msp_clocks         
-0000c15a  init_pins               
-0000c104  main                    
-0000c1e2  memcpy                  
-00000202  phase                   
-0000c24a  rx_vector               
-0000c180  setup_spi               
-0000c228  spi_begin               
-0000c230  spi_end                 
-0000c212  transfer_packet         
-0000c23e  transmit_byte           
-0000c130  transmit_packet         
+0000c242  init_msp_clocks         
+0000c174  init_pins               
+0000c10e  main                    
+0000c20e  memcpy                  
+00000204  phase                   
+0000c282  rx_vector               
+0000c19a  setup_spi               
+0000c258  spi_begin               
+0000c260  spi_end                 
+0000c268  timera0_vector          
+0000c220  transfer_packet         
+0000c276  transmit_byte           
+0000c148  transmit_packet         
 00000200  tx_buf                  
 0000c0c8  tx_vector               
 
@@ -452,7 +453,7 @@ address   name
 000001b4  ADC10MEM                
 000001bc  ADC10SA                 
 00000200  tx_buf                  
-00000202  phase                   
+00000204  phase                   
 000003b0  _stack                  
 00000400  __STACK_END             
 000010c0  TLV_CHECKSUM            
@@ -471,37 +472,39 @@ address   name
 0000c000  _auto_init              
 0000c06e  copy_in                 
 0000c0c8  tx_vector               
-0000c104  main                    
-0000c130  transmit_packet         
-0000c15a  init_pins               
-0000c180  setup_spi               
-0000c1a0  _c_int00_noargs_noexit  
-0000c1ba  __TI_zero_init          
-0000c1ce  __mspabi_mpyi           
-0000c1ce  __mspabi_mpyi_sw        
-0000c1e2  memcpy                  
-0000c1f4  __mspabi_func_epilog_7  
-0000c1f6  __mspabi_func_epilog_6  
-0000c1f8  __mspabi_func_epilog_5  
-0000c1fa  __mspabi_func_epilog_4  
-0000c1fc  __mspabi_func_epilog_3  
-0000c1fe  __mspabi_func_epilog_2  
-0000c200  __mspabi_func_epilog_1  
-0000c204  init_msp_clocks         
-0000c212  transfer_packet         
-0000c220  __TI_ISR_TRAP           
-0000c228  spi_begin               
-0000c230  spi_end                 
-0000c238  C$$EXIT                 
-0000c238  abort                   
-0000c23e  transmit_byte           
-0000c244  _system_pre_init        
-0000c248  _system_post_cinit      
-0000c24a  rx_vector               
-0000c254  __TI_Handler_Table_Base 
-0000c256  __TI_CINIT_Base         
-0000c256  __TI_Handler_Table_Limit
-0000c25a  __TI_CINIT_Limit        
+0000c10e  main                    
+0000c148  transmit_packet         
+0000c174  init_pins               
+0000c19a  setup_spi               
+0000c1ba  _c_int00_noargs_noexit  
+0000c1d4  __TI_zero_init          
+0000c1e8  __mspabi_mpyi           
+0000c1e8  __mspabi_mpyi_sw        
+0000c1fc  __mspabi_srll           
+0000c20e  memcpy                  
+0000c220  transfer_packet         
+0000c232  __mspabi_func_epilog_7  
+0000c234  __mspabi_func_epilog_6  
+0000c236  __mspabi_func_epilog_5  
+0000c238  __mspabi_func_epilog_4  
+0000c23a  __mspabi_func_epilog_3  
+0000c23c  __mspabi_func_epilog_2  
+0000c23e  __mspabi_func_epilog_1  
+0000c242  init_msp_clocks         
+0000c250  __TI_ISR_TRAP           
+0000c258  spi_begin               
+0000c260  spi_end                 
+0000c268  timera0_vector          
+0000c270  C$$EXIT                 
+0000c270  abort                   
+0000c276  transmit_byte           
+0000c27c  _system_pre_init        
+0000c280  _system_post_cinit      
+0000c282  rx_vector               
+0000c288  __TI_Handler_Table_Base 
+0000c28a  __TI_CINIT_Base         
+0000c28a  __TI_Handler_Table_Limit
+0000c28e  __TI_CINIT_Limit        
 0000ffe0  __TI_int00              
 0000ffe4  __TI_int02              
 0000ffe6  __TI_int03              
@@ -525,4 +528,4 @@ UNDEFED   __TI_BINIT_Limit
 UNDEFED   __TI_INITARRAY_Base     
 UNDEFED   __TI_INITARRAY_Limit    
 
-[159 symbols]
+[161 symbols]
