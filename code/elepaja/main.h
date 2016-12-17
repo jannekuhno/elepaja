@@ -13,6 +13,7 @@
 #define PLATFORM_MSP430 1
 #define PLATFORM_PSOC 0
 
+#define REG_RESET 0x00000000
 #define REG0_CONF 0x00
 #define REG1_CONF 0x00
 #define REG2_CONF 0x00

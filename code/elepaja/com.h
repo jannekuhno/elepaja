@@ -9,7 +9,7 @@
 #define COM_H_
 #include <stdint.h>
 //
-#define SPI_CTL0_SEQUENCE UCCKPL + UCMSB + UCMST + UCSYNC
+#define SPI_CTL0_SEQUENCE UCCKPH + UCMSB + UCMST + UCSYNC
 #define SPI_CTL1_SEQUENCE UCSSEL1
 #define SPI_CLOCKRATE 0x31F //
 
